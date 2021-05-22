@@ -4,6 +4,12 @@ set number relativenumber
 " Syntax coloring
 syntax on
 
+" Set colorscheme 
+set t_Co=256   " This is may or may not needed.
+
+set background=light
+colorscheme PaperColor
+
 " Set tabs to 4
 set tabstop=2
 set softtabstop=2
@@ -107,6 +113,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 " Control P
 Plug 'ctrlpvim/ctrlp.vim'
+" Paper color theme
+Plug 'NLKNguyen/papercolor-theme'
 " End of plugins declarations
 call plug#end()
 "" 
