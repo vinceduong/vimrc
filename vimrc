@@ -4,12 +4,6 @@ set number relativenumber
 " Syntax coloring
 syntax on
 
-" Set colorscheme 
-set t_Co=256   " This is may or may not needed.
-
-set background=light
-colorscheme PaperColor
-
 " Set tabs to 4
 set tabstop=2
 set softtabstop=2
@@ -23,7 +17,6 @@ set showcmd
 
 " Display the match for a search pattern whwn halway typing it
 set incsearch
-set hlsearch
 
 " Jump to matching tags, if/else/endif etc...
 packadd! matchit
@@ -87,10 +80,10 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = {
-	  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
+			\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+			\ 'file': '\v\.(exe|so|dll)$',
+			\ 'link': 'some_bad_symbolic_links',
+			\ }
 
 "" Plugins
 " Automatically install vim-plugin
@@ -118,3 +111,16 @@ Plug 'NLKNguyen/papercolor-theme'
 " End of plugins declarations
 call plug#end()
 "" 
+
+" Set colorscheme 
+set t_Co=256   " This is may or may not needed.
+
+set background=light
+colorscheme PaperColor
+
+" Go debuger windows
+
+let g:go_debug_windows = {
+	\ 'vars':  'rightbelow 50vnew',
+	\ 'out':  'botright 20new',
+\ }
