@@ -85,7 +85,12 @@ Plug 'preservim/nerdtree' |
 Plug 'tpope/vim-fugitive'
 " End of plugins declarations
 Plug 'itchyny/lightline.vim'
-"
+" JS / TS plugins
+Plug 'pangloss/vim-javascript'    " JavaScript support
+Plug 'leafgarland/typescript-vim' " TypeScript syntax
+Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
+Plug 'jparise/vim-graphql'        " GraphQL syntax
+
 call plug#end()
 "" 
 
@@ -118,9 +123,8 @@ let g:ctrlp_cmd = 'CtrlPMixed'
 " Ignore thoses files
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 "
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = {
-			\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+			\ 'dir':  'node_modules\|DS_Store\|git',
 			\ 'file': '\v\.(exe|so|dll)$',
 			\ 'link': 'some_bad_symbolic_links',
 			\ }
@@ -165,8 +169,14 @@ if has('nvim')
 else
 	inoremap <silent><expr> <c-@> coc#refresh()
 endif
-
-
+" Ts support
+let g:coc_global_extensions = [ 'coc-tsserver' ]
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+"
 " Nerdtree git symbols
 let g:NERDTreeGitStatusIndicatorMapCustom = {
 			\ 'Modified'  :'M',
