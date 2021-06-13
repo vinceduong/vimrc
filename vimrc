@@ -139,6 +139,7 @@ let g:go_debug_windows = {
 			\ 'vars':  'rightbelow 50vnew',
 			\ 'out':  'botright 20new',
 			\ }
+let g:go_gopls_enabled = 0
 
 
 " Coc configuration
