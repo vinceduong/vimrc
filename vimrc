@@ -90,6 +90,10 @@ Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
 Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
 Plug 'jparise/vim-graphql'        " GraphQL syntax
+" Svelte plugin
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
+" Prettier plugin
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 
 call plug#end()
 "" 
@@ -135,16 +139,6 @@ set t_Co=256   " This is may or may not needed.
 
 set background=light
 colorscheme PaperColor
-
-" Vim-go settings
-" Go debuger windows
-
-let g:go_debug_windows = {
-			\ 'vars':  'rightbelow 50vnew',
-			\ 'out':  'botright 20new',
-			\ }
-let g:go_gopls_enabled = 0
-
 
 " Coc configuration
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable"
@@ -204,3 +198,11 @@ let g:lightline = {
 			\   'gitbranch': 'FugitiveHead'
 			\ },
 			\ }
+
+" Svelte config
+let g:svelte_preprocessors = ['typescript']
+let g:svelte_indent_script = 0
+let g:svelte_indent_style = 0
+
+" Go config
+"let g:go_debug=['lsp']
