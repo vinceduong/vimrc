@@ -77,7 +77,9 @@ Plug 'preservim/nerdtree'
 " Control P
 Plug 'ctrlpvim/ctrlp.vim'
 " Paper color theme
-Plug 'NLKNguyen/papercolor-theme'
+" Plug 'NLKNguyen/papercolor-theme'
+" Gruvbox color theme
+Plug 'morhetz/gruvbox'
 " Nerdtree git
 Plug 'preservim/nerdtree' |
 			\ Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -85,6 +87,8 @@ Plug 'preservim/nerdtree' |
 Plug 'tpope/vim-fugitive'
 " End of plugins declarations
 Plug 'itchyny/lightline.vim'
+" Lightline gruvbox
+Plug 'shinchu/lightline-gruvbox.vim'
 " JS / TS plugins
 Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
@@ -135,10 +139,8 @@ let g:ctrlp_custom_ignore = {
 
 
 " Set colorscheme 
-set t_Co=256   " This is may or may not needed.
-
-set background=light
-colorscheme PaperColor
+set background=dark
+colorscheme gruvbox
 
 " Coc configuration
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable"
@@ -187,7 +189,7 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
 			\ }
 " Lightline configuration
 let g:lightline = {
-			\ 'colorscheme': 'PaperColor',
+			\ 'colorscheme': 'gruvbox',
 			\ 'active': {
 			\   'left': [
 			\  		[ 'mode', 'paste' ],
